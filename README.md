@@ -6,20 +6,20 @@ Site: https://ruiqichenbiec.github.io/lse-y2-practice/
 
 ## What is here
 
-- `index.html` — the page: practice sets listed by round, course and unit.
-- `pdf/<course>/<unit>.pdf` — the practice sets. Each problem is followed by its hints and a full solution. The sets are self-contained: definitions and results they use are stated in the set itself.
-- `checks/<unit>/` — the machine checks behind the labels on the page, and `report.md`, a per-part summary.
+- `index.html` — the page: practice sets listed by round, course and chapter.
+- `pdf/<course>/<course>-ch<nn>.pdf` — the practice sets, one chapter per teaching week, numbered separately for each course. Problems are numbered `Q<chapter>.<k>`. Each problem is followed by its hints and a full solution. The sets are self-contained: definitions and results they use are stated in the set itself.
+- `checks/<course>-ch<nn>/` — the machine checks behind the labels on the page, and `report.md`, a per-part summary.
 
-Only units that have gone through every check are published; the others are listed as "in preparation".
+Only chapters that have gone through every check are published; the others are listed as "in preparation".
 
 ## How the checks work
 
-Each part of each problem falls under one of these labels. `checks/<unit>/report.md` lists every part and its check, using short codes: `lean` = statement formally verified, `sympy` = answer recomputed, `numeric` = numerically checked, `reviewed-only` = reviewed by a model only, `na` = definition recall.
+Each part of each problem falls under one of these labels. `checks/<course>-ch<nn>/report.md` lists every part and its check, using short codes: `lean` = statement formally verified, `sympy` = answer recomputed, `numeric` = numerically checked, `reviewed-only` = reviewed by a model only, `na` = definition recall.
 
 | Label | What was checked | What was not checked |
 |---|---|---|
-| Statement formally verified | The conclusion of that part has a proof that compiles in Lean 4 with Mathlib (`checks/<unit>/Q….lean`). | Each step of the written solution in the PDF. The Lean proof may take a different route. |
-| Answer recomputed | An independent SymPy script derives the final value or expression from the problem's data and matches the printed answer (`checks/<unit>/Q….py`). | The wording of the intermediate steps. |
+| Statement formally verified | The conclusion of that part has a proof that compiles in Lean 4 with Mathlib (`checks/<course>-ch<nn>/Q….lean`). | Each step of the written solution in the PDF. The Lean proof may take a different route. |
+| Answer recomputed | An independent SymPy script derives the final value or expression from the problem's data and matches the printed answer (`checks/<course>-ch<nn>/Q….py`). | The wording of the intermediate steps. |
 | Numerically checked | The identity holds on random numerical examples. | The general case. |
 | Reviewed by a model only | An AI model reviewed the part; there is no machine check (explanations, discussion, diagrams). | — |
 | Definition recall | Nothing: the part asks for a definition or a statement from memory. | — |
@@ -28,7 +28,7 @@ A second AI model compared every Lean statement and every script with the printe
 
 ## Reporting an error
 
-Open an issue: https://github.com/ruiqichenbiec/lse-y2-practice/issues — say which unit and which problem (for example `MA203-L2-Q7(b)`).
+Open an issue: https://github.com/ruiqichenbiec/lse-y2-practice/issues — say which course and which problem (for example `MA203 Q2.7(b)`).
 
 ## Licence
 
