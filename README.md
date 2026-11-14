@@ -14,7 +14,7 @@ Only units that have gone through every check are published; the others are list
 
 ## How the checks work
 
-Each part of each problem carries one of these labels.
+Each part of each problem falls under one of these labels. `checks/<unit>/report.md` lists every part and its check, using short codes: `lean` = statement formally verified, `sympy` = answer recomputed, `numeric` = numerically checked, `reviewed-only` = reviewed by a model only, `na` = definition recall.
 
 | Label | What was checked | What was not checked |
 |---|---|---|
@@ -22,6 +22,7 @@ Each part of each problem carries one of these labels.
 | Answer recomputed | An independent SymPy script derives the final value or expression from the problem's data and matches the printed answer (`checks/<unit>/Q….py`). | The wording of the intermediate steps. |
 | Numerically checked | The identity holds on random numerical examples. | The general case. |
 | Reviewed by a model only | An AI model reviewed the part; there is no machine check (explanations, discussion, diagrams). | — |
+| Definition recall | Nothing: the part asks for a definition or a statement from memory. | — |
 
 A second AI model compared every Lean statement and every script with the printed problem, to confirm that what was checked is the problem as printed. No teacher has reviewed this material.
 
@@ -31,4 +32,4 @@ Open an issue: https://github.com/ruiqichenbiec/lse-y2-practice/issues — say w
 
 ## Licence
 
-Practice sets and page: CC BY-NC-SA 4.0. Files under `checks/`: MIT. See `LICENSE.md`.
+Practice sets, page, and the problem text quoted at the top of each check file: CC BY-NC-SA 4.0. Everything else under `checks/` (Lean and Python code, reports): MIT. See `LICENSE.md`.

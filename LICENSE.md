@@ -10,7 +10,10 @@ In short: you may share and adapt the material for non-commercial purposes, prov
 
 ## Machine checks
 
-The files under `checks/` (Lean and Python sources and the reports) are licensed under the MIT licence:
+The files under `checks/` have two kinds of content.
+
+- The problem text quoted in them — the comment block at the top of each Lean file and the docstring at the top of each Python file, which reproduce parts of the practice sets — is part of the practice sets and is licensed under CC BY-NC-SA 4.0, as above.
+- Everything else in those files (the Lean statements and proofs, the Python code) and the reports is licensed under the MIT licence:
 
 MIT License
 
